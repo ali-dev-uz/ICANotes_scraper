@@ -1,4 +1,4 @@
-import psycopg2
+# import psycopg2
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -88,7 +88,7 @@ def click_li(driver, items, dir_name, folder_id):
         soup = BeautifulSoup(page_source, 'html.parser')
 
         a_tags = soup.find_all('a', class_='glyphicon glyphicon-download-alt pointer')
-        results = []
+
         print("files started download")
         for a_tag in a_tags:
             href = a_tag.get('href')
@@ -102,7 +102,7 @@ def click_li(driver, items, dir_name, folder_id):
                 }
                 insert_file_data(dir_name, href, strong_text)
                 time.sleep(0.0001)
-    return results
+
 
 
 def main_function(item, folder_id):
@@ -178,6 +178,6 @@ create_table()
 for item, folder_ids in zip(items_list, google_drive_folder_id):
     _start_script()
     print(Fore.LIGHTYELLOW_EX + f"Patient ID: {item}" + Fore.WHITE)
-    urls = main_function(item, folder_ids)
-    print(urls)
+    # urls = main_function(item, folder_ids)
+    # print(urls)
     _end_script()
