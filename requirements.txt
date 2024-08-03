@@ -1,0 +1,11 @@
+requests
+beautifulsoup4
+aiohttp
+tronapi
+selenium
+PyDrive
+colorama
+bs4
+google
+scrapping
+environs
